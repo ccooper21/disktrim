@@ -155,7 +155,7 @@ void error(int exit, WCHAR* msg, ...) {
         putchar(L'\n');
     }
 
-    FlushFileBuffers(GetStdHandle(STD_OUTPUT_HANDLE));
+    fflush(stdout);
 
     if (exit)
         ExitProcess(1);
@@ -415,7 +415,7 @@ int wmain(int argc, WCHAR* argv[]) {
 
     wprintf(L"Looks like TRIM worked!\n");
 
-    FlushFileBuffers(GetStdHandle(STD_OUTPUT_HANDLE));
+    fflush(stdout);
 
     return 0;
 }
